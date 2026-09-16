@@ -1,0 +1,25 @@
+q = int(input())
+stack = []
+inc = []
+
+for _ in range(q):
+    query = input().split()
+    
+    if query[0] == '1':
+        x = int(query[1])
+        stack.append(x)
+        inc.append(0)
+        
+    elif query[0] == '2':
+        i = inc.pop()
+        val = stack.pop() + i
+        if inc:
+            inc[-1] += i
+        print(val)
+        
+    elif query[0] == '3':
+        k = int(query[1])
+        val = int(query[2])
+        if stack:
+            idx = min(k, len(stack)) - 1
+            inc[idx] += val

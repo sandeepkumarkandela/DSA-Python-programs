@@ -1,0 +1,17 @@
+q, c = map(int, input().split())
+a, t1, t2 = [0] * c, -1, c
+
+for _ in range(q):
+    p = input().split()
+    if p[0] == '1': 
+        if t1 + 1 == t2: print("OVERFLOW")
+        else: t1 += 1; a[t1] = p[1]
+    elif p[0] == '2': 
+        if t1 + 1 == t2: print("OVERFLOW")
+        else: t2 -= 1; a[t2] = p[1]
+    elif p[0] == '3': 
+        if t1 == -1: print("EMPTY")
+        else: print(a[t1]); t1 -= 1
+    elif p[0] == '4': 
+        if t2 == c: print("EMPTY")
+        else: print(a[t2]); t2 += 1

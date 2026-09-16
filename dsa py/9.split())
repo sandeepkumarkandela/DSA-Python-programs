@@ -1,0 +1,7 @@
+q, c = map(int, input().split())
+s = []
+
+for _ in range(q):
+    p = input().split()
+    if p[0] == '1': print("OVERFLOW") if len(s) == c else s.append(p[1])
+    if p[0] == '2': print("UNDERFLOW") if not s else print(s.pop())

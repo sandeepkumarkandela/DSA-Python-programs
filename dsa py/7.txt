@@ -1,0 +1,10 @@
+from collections import deque
+qu = deque()
+
+for _ in range(int(input())):
+    c = input().split()
+    if c[0] == '1': 
+        qu.append(c[1])
+        for _ in range(len(qu) - 1): qu.append(qu.popleft())
+    if c[0] == '2': qu.popleft()
+    if c[0] == '3': print(qu[0])

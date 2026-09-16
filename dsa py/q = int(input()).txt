@@ -1,0 +1,22 @@
+q = int(input()) 
+stack = []       
+
+for _ in range(q):
+    query = input().split() 
+    
+    if query[0] == '1':
+        # Push
+        x = int(query[1])
+        stack.append(x)
+        
+    elif query[0] == '2':
+        # Pop
+        stack.pop()
+        
+    elif query[0] == '3':
+        # Top
+        print(stack[-1])
+        
+    elif query[0] == '4':
+        # Size (O(1) time)
+        print(len(stack))
