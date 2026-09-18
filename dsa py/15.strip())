@@ -1,0 +1,4 @@
+st = list(input().strip())
+res = []
+while st: res.append(st.pop())
+print("".join(res))
